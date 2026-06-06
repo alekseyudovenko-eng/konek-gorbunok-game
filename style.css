@@ -1,1 +1,97 @@
+/* Общие настройки страницы */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #87CEEB; /* Небесно-голубой фон */
+    font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+    overflow: hidden;
+}
 
+/* Контейнер игры */
+#game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 8px solid #8B4513; /* Коричневая рамка, как деревянная */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    background-color: #90EE90; /* Светло-зеленый фон (трава) */
+    overflow: hidden;
+}
+
+/* Игровой холст */
+#gameCanvas {
+    display: block;
+    background: transparent;
+}
+
+/* Интерфейс (счет, уровень) */
+#ui-layer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 2px white;
+    pointer-events: none; /* Чтобы клики проходили сквозь текст */
+}
+
+/* Экраны поверх игры (старт, конец) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+
+.overlay h1 {
+    font-size: 48px;
+    color: #FFD700; /* Золотой цвет */
+    margin-bottom: 20px;
+}
+
+.overlay p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Кнопка */
+#start-btn {
+    padding: 15px 40px;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: bold;
+    color: white;
+    background-color: #FF4500; /* Оранжево-красный */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#start-btn:hover {
+    background-color: #FF6347;
+    transform: scale(1.1);
+}
+
+/* Скрытие оверлея при старте */
+.hidden {
+    display: none !important;
+}
